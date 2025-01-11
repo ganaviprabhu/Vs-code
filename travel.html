@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Escape</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0; 
+    padding: 0;
+}
+
+header {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+h2{
+    font-style: italic;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 23%;
+    margin: 1%;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: greenyellow;
+    color: rgb(16, 1, 1);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explore the World</h1>
+        <nav>
+            <ul>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><form action="/search" method="get">
+                    <input type="text" name="query" placeholder="Search..." required>
+                    <button type="submit">Search</button>
+                </form></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="destinations">
+            <h2>Popular Destinations</h2>
+            <p>Discover the most beautiful places to visit around the globe!</p>
+        </section>
+
+        <section id="gallery">
+            <h2>Photo Gallery</h2>
+            <div class="gallery">
+                <img src="c:\Users\ADMIN\Desktop\beach.jpg" alt="Beautiful Landscape 1">
+                <img src="c:\Users\ADMIN\Desktop\mt.jpg" alt="Beautiful Landscape 2">
+                <img src="c:\Users\ADMIN\Desktop\dubai.jpg" alt="Beautiful Landscape 3">
+                <img src="c:\Users\ADMIN\Desktop\egypt.jpg" alt="Beautiful Landscape 4">
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are passionate about traveling and want to share our experiences with you!</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: info@travelwebsite.com</p>
+        </section>
+
+        <button class="feedback-button" onclick="toggleFeedbackForm()">Give Feedback</button>
+
+    
+        <div class="feedback-form" id="feedbackForm">
+            <h3>We value your feedback!</h3>
+            <textarea id="feedback" rows="4" placeholder="Please write your feedback here..."></textarea>
+            <br>
+            <button onclick="submitFeedback()">Submit Feedback</button>
+        </div>
+
+        <script>
+
+            function toggleFeedbackForm() {
+                var feedbackForm = document.getElementById("feedbackForm");
+                feedbackForm.style.display = feedbackForm.style.display === "none" || feedbackForm.style.display === "" ? "block" : "none";
+            }
+
+            
+            function submitFeedback() {
+                var feedback = document.getElementById("feedback").value;
+                if (feedback.trim() !== "") {
+                    alert("Thank you for your feedback!");
+                    document.getElementById("feedback").value = ""; 
+                    toggleFeedbackForm(); 
+                } else {
+                    alert("Please provide some feedback.");
+                }
+            }
+        </script>
+
+</body>
+</html>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Explore the World</p>
+    </footer>
+</body>
+</html>
